@@ -4,6 +4,10 @@ import '../style/navbar.css';
 const Navbar = () => {
     return (
         <nav className="navbar">
+            <div className="navbar__clone-banner">
+                <marquee scrollamount="3">This website is a non-monetized, educational representation of the Technical Writeup content for the purpose of illustrating the work of an intern assignment. All rights to the original content belong to the TakeUForward group. This representation serves solely as an educational resource and technical write-up demonstration and is not intended for commercial purposes.</marquee>
+            </div>
+
             <div className="navbar__top">
                 <div className="navbar__logo">
                     <span className="navbar__logo-text">takeUforward</span>
@@ -11,14 +15,17 @@ const Navbar = () => {
                 </div>
 
                 <div className="navbar__buttons">
-                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/gauri-tomar-005048268/" target="_blank" rel="noopener noreferrer">
                         <img src="/images/linkedin_logo.png" />
                     </a>
-                    <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/gauritomar" target="_blank" rel="noopener noreferrer">
                         <img src="/images/github.png" />
                     </a>
-                    <a href="https://leetcode.com/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://leetcode.com/gauri03" target="_blank" rel="noopener noreferrer">
                         <img src="/images/leetcode.png" />
+                    </a>
+                    <a href="https://twitter.com/bradakkii?s=11&t=4AnE7upTZ-KOZ0FveLO34g" target="_blank" rel="noopener noreferrer">
+                        <img src="/images/twitter.png" />
                     </a>
                 </div>
 

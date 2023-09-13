@@ -22,7 +22,22 @@
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Top row containing logo and navigation options */
+.navbar__clone-banner {
+  background-color: white;
+  color: red;
+  height: auto;
+  text-align: center;
+  font-weight: bold;
+  padding: 0; /* Remove padding */
+  line-height: 1; /* Set line-height to 1 to minimize vertical space */
+  font-size: 16px; /* Adjust font size as needed */
+}
+
+/* Disclaimer text */
+.navbar__disclaimer {
+  margin: 0;
+}
+
 .navbar__top {
   display: flex;
   justify-content: space-between;
@@ -60,7 +75,7 @@
   text-decoration: none;
   margin-right: 20px;
   font-size: 20px;
-  padding: 20px 40px;
+  padding: 10px 20px;
 }
 
 .navbar__bottom {
@@ -68,7 +83,11 @@
   justify-content: center;
 }
 
+.navbar__buttons a {
+  margin-right: 40px;
+}
+
 .navbar__buttons a img {
-  width: 36px;
+  width: 42px;
   height: auto;
 }

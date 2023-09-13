@@ -1,0 +1,56 @@
+@font-face {
+  font-family: "FS Joey Medium Regular";
+  src: url("https://db.onlinewebfonts.com/t/68872ce7bf957bd250d67f5be7d58a3d.eot");
+  src: url("https://db.onlinewebfonts.com/t/68872ce7bf957bd250d67f5be7d58a3d.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/68872ce7bf957bd250d67f5be7d58a3d.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/68872ce7bf957bd250d67f5be7d58a3d.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/68872ce7bf957bd250d67f5be7d58a3d.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/68872ce7bf957bd250d67f5be7d58a3d.svg#FS Joey Medium Regular")
+      format("svg");
+
+  font-family: "NuvoWebPro-Black W03 Regular";
+  src: url("https://db.onlinewebfonts.com/t/319aac7ec4fdab1a7b3f36b93617529f.eot");
+  src: url("https://db.onlinewebfonts.com/t/319aac7ec4fdab1a7b3f36b93617529f.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/319aac7ec4fdab1a7b3f36b93617529f.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/319aac7ec4fdab1a7b3f36b93617529f.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/319aac7ec4fdab1a7b3f36b93617529f.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/319aac7ec4fdab1a7b3f36b93617529f.svg#NuvoWebPro-Black W03 Regular")
+      format("svg");
+}
+.intro {
+  text-align: center;
+  padding: 20px;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: row; /* Display content side by side */
+  align-items: flex-start; /* Vertically align content to the top */
+  max-width: 60%; /* Limit the width to 60% of the screen */
+  margin: 0 auto; /* Center the component horizontally */
+}
+
+.image {
+  flex: 1; /* Allow the image to grow and take available space */
+  text-align: left;
+}
+
+.image img {
+  max-width: 100%; /* Ensure the image doesn't exceed its container width */
+  float: left; /* Float the image to the left */
+  margin-right: 20px; /* Add some spacing between the image and text */
+}
+
+.text {
+  font-family: "FS Joey Medium Regular";
+  flex: 2; /* Allow the text to grow and take more space than the image */
+  text-align: left;
+}

@@ -1,0 +1,25 @@
+.intro {
+  text-align: center;
+  padding: 20px;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: row; /* Display content side by side */
+  align-items: center; /* Vertically center align */
+}
+
+.image {
+  flex: 1; /* Allow the image to grow and take available space */
+  text-align: left;
+}
+
+.image img {
+  max-width: 100%; /* Ensure the image doesn't exceed its container width */
+}
+
+.text {
+  flex: 2; /* Allow the text to grow and take more space than the image */
+  text-align: left;
+  padding-left: 20px; /* Add some spacing between the image and text */
+}
