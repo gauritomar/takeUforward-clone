@@ -1,0 +1,166 @@
+{
+    "Title": "Median in a Row Wise Sorted Matrix",
+    "Problem Statement": "Find the median of a given row wise sorted matrix of size n x m. It is given that n and m are odd integers (n x m is always odd).",
+    "Examples": [
+        {
+            "Input": [
+                "[ 1, 5,  7,  9,  11\r\n  2, 3,  4,  5,  10\r\n  9, 10, 12, 14, 16 ]\r\n\r\nN = 3\r\nM = 5\r\n"
+            ],
+            "Output": 9,
+            "Explanation": "After flattening the matrix and sorting we get: [1, 2, 3, 4, 5, 5, 7, 9, 9, 10, 10, 11, 12, 14, 16] where 9 is the middle element."
+        },
+        {
+            "Input": [
+                "[ 1, 3, 5\r\n  2, 5, 6\r\n  7, 8, 9 ]\r\n\r\nN = 3\r\nM = 3\r\n"
+            ],
+            "Output": 5,
+            "Explanation": "After flattening the matrix and sorting we get: [1, 2, 3, 5, 5, 6, 7, 8, 9] where 5 is the middle element."
+        }
+    ],
+    "Problem Link": "https://www.codingninjas.com/studio/problems/median-of-a-row-wise-sorted-matrix_1115473",
+    "Video Link": "https://www.youtube.com/watch?v=Q9wXgdxJq48",
+    "Solution": [
+        {
+            "Description": " ",
+            "Approaches": [
+                {
+                    "Index": 1,
+                    "Title": "Brute Force",
+                    "Description": [
+                        "Let's dive into this: In a sorted array, the median is simply the middle value. As given in the question, all rows in this matrix will be sorted.",
+                        "So, let us proceed by listing all matrix numbers in a sorted fashion. And there you have it the number at the middle index will be the matrix median!",
+                        {
+                            "type": "image",
+                            "src": "images/approach1.png",
+                            "alt": "Brute Force Approach"
+                        },
+                        "Point to note: Since the dimensions of the matrix are n x m, the total number of elements will be n*m. Hence the index of the middle element of this array will be (n x m / 2)."
+                    ],
+                    "Steps": [
+                        {
+                            "Index": 1,
+                            "Title": "Flattening the Matrix",
+                            "Description": "To begin, we take each element from the 2D matrix and place it into a 1-D array. This array will hold all the elements of the 2D matrix, but it won't be sorted. Remember, the median is the middle value of a sorted list of numbers."
+                        },
+                        {
+                            "Index": 2,
+                            "Title": "Sorting the Array",
+                            "Description": "So, our next move is to apply a sorting algorithm to this array. This will arrange the numbers in ascending order. The value at the middle index of this sorted array will be our final answer."
+                        }
+                    ],
+                    "Pseudo Algorithm": [
+                        {
+                            "Index": 1,
+                            "Code": "ls = []\n\nFor (int i = 0 to n)\n    for(int j = 0 to m)\n        ls.add(matrix[i][j])\n\nsort(ls) // This can be done using built-in sort functions in your programming language, like the C++ STL library\n\nReturn ls[(n x m)/2] // This is our median",
+                            "Description": ""
+                        }
+                    ],
+                    "Complexity Analysis": {
+                        "Time Complexity": {
+                            "Formula": "O(nm + nm x log(n*m))",
+                            "Description": [
+                                "n*m: To iterate over all elements and add them to the array",
+                                "nm x log(nm): Sorting the array. Sorting an array of size n has a time complexity of nlog(n), and here our array has nm elements"
+                            ]
+                        },
+                        "Space Complexity": {
+                            "Formula": "O(n*m)",
+                            "Description": [
+                                "We need space to store all the matrix elements in an array."
+                            ]
+                        }
+                    },
+                    "Note": " This approach can be further optimised. At first glance, we'd like to reduce the time complexity from O(nm(1 + log(nm))) to just O(2nm) ~= O(nm). While this is an improvement, it's not the final solution. If we can solve this problem in just O(log(n*m)), that would be ideal."
+                },
+                {
+                    "Index": 2,
+                    "Title": "Binary Search",
+                    "Description": [
+                        "To optimize the time complexity, we aim to find the median without iterating over the entire matrix, which may have n * m elements.",
+                        "We take advantage of the given property that all rows in this matrix are sorted. Since each row is sorted, we naturally consider using binary search.",
+                        "The median in a sorted array is typically the middle element, implying that the number of elements to the left of the median equals the number of elements to the right.",
+                        "Note: In the context of this problem, it is essential to account for the possibility of elements being present multiple times.",
+                        "`Equal to` is a significant consideration, which means we should treat elements that are equal to the median as follows:",
+                        "On one side of the median, we consider both smaller and equal values.",
+                        "On the other side of the median, we consider both greater and equal values.",
+                        "This ensures that we accurately represent the distribution of values around the median, especially when there are duplicate elements in the dataset.",
+                        "As a result, the count of elements that are smaller than or equal to the median will always be at least half of the total number of elements, represented as (n * m - 1)/2.",
+                        "This count is considered the minimum because duplicates of the median can also exist to its right.",
+                        "Consequently, when searching for the median in a dataset, you can identify it by finding the first element that has more than (n * m - 1)/2 elements smaller than or equal to it.",
+                        {
+                            "type": "image",
+                            "src": "images/approach2.png",
+                            "alt": "Binary Search Array Approach"
+                        },
+                        "This particular element will be the median.",
+                        "To efficiently find the median in this matrix, we can use binary search instead of creating a sorted array and using extra space to calculate how many elements are smaller than or equal to each element.",
+                        "The idea is to narrow down the search space using two pointers, low and high. The search space will be narrowed down by moving the pointers according to a function that calculates how many numbers in the matrix are smaller than the current element.",
+                        {
+                            "type": "image",
+                            "src": "images/approach-gif.gif",
+                            "alt": "Binary Search Array Approach Gif"
+                        },
+                        "(Gif Above)",
+                        "We can optimize the computation of the count of smaller or equal elements for each element in the search space.",
+                        "Instead of calculating this count for every element in the search space, only applying it to elements the mid pointer is pointing to at a time.",
+                        {
+                            "type": "image",
+                            "src": "images/matrix-search.png",
+                            "alt": "Binary Search Array Approach Gif"
+                        }
+                    ],
+                    "Steps": [
+                        {
+                            "Index": 1,
+                            "Title": "Define Our Search Space",
+                            "Description": "To start calibrating on our matrix we start by defining our search range. The minimum value of the first column and maximum value of the last column will serve as initial boundaries of our search space."
+                        },
+                        {
+                            "Index": 2,
+                            "Title": "Binary Search Loop",
+                            "Description": "Then we enter a binary search loop that continues as long as the minimum value is less than or equal to the maximum value."
+                        },
+                        {
+                            "Index": 3,
+                            "Title": "Adjust our Search Space",
+                            "Description": "In each iteration we calculate the midpoint (mid) between the minimum and maximum values. For each row in the matrix, we use the upperbound function to find the count of elements smaller than or equal to the current mid. Compare this count with the required count, which is (n* m) / 2. Based on the comparison, we adjust either the minimum or maximum value to narrow down the search space."
+                        },
+                        {
+                            "Index": 4,
+                            "Title": "Return Median",
+                            "Description": "Continue the binary search until the value of low exceeds the value of high. At this point, the low represents the first element that has elements smaller than or equal to it in a quantity equal to or exceeding (n* m) / 2. Return it as our median.                            "
+                        }
+                    ],
+                    "Pseudo Algorithm": [
+                        {
+                            "Index": 1,
+                            "Code": "function findMedian(matrix, n, m):\r\n    req = (n * m ) \/\/ 2\r\n    low = min(matrix[0])  # Smallest element from the 0th column\r\n    high = max(matrix[m - 1])  # Largest element from the (m-1)th column\r\n\r\n    while low <= high:\r\n        mid = (low + high) \/\/ 2\r\n        smallerEquals = countSmallerElements(matrix, mid)\r\n\r\n        if smallerEquals <= req:\r\n            low = mid + 1\r\n        else:\r\n            high = mid - 1\r\n\r\n    return low\r\n",
+                            "Description": "This algorithm efficiently identifies the median by iteratively narrowing down the search space using binary search and leveraging the property that the median must have (n* m) / 2 numbers smaller than or equal to it."
+                        },
+                        {
+                            "Index": 2,
+                            "Code": "req = (n * m)\/2\r\nfunction countSmallerElements(matrix, mid):\r\n    count = 0\r\n    for row in matrix:\r\n        count += upperbound(row, mid)\r\n    return count\r\n\r\nfunction upperbound(row, x):\r\n    low = 0\r\n    high = length(row) - 1\r\n\r\n    while low <= high:\r\n        mid = (low + high) \/\/ 2\r\n\r\n        if row[mid] <= x:\r\n            low = mid + 1\r\n        else:\r\n            high = mid - 1\r\n    return low\r\n",
+                            "Description": "Now, we need a function that calculates how many numbers are smaller than or equal to a current element in the matrix. We can leverage the upper bound property of a sorted array to get this in minimal time complexity as each row will be sorted. The upper bound property of binary search refers to finding the index of the first element in a sorted array that is greater than a given target value. "
+                        }
+                    ],
+                    "Complexity Analysis": {
+                        "Time Complexity": {
+                            "Formula": "O(n * log(m) * log(max-min)))",
+                            "Description": [
+                                "n * log(m) : For each row, we use the upperbound function to find the count of elements smaller than or equal to the current mid.This operation, when applied to each of the 'n' rows containing m elements each, takes O(n * log(m)) time.",
+                                "log(max-min) :  The binary search continues until the minimum value exceeds the maximum value and in the worst case will take log(max-min) iterations to do so."
+                            ]
+                        },
+                        "Space Complexity": {
+                            "Formula": "O(1)",
+                            "Description": [
+                                "We do not need to store the elements of the matrix in an additional data structure hence the space required remains constant."
+                            ]
+                        }
+                    },
+                    "Note": "Food for Thought: Can you think why did the Question specify the n and m have to be odd? Write you answer in the comments below."
+                }
+            ]
+        }
+    ]
+}

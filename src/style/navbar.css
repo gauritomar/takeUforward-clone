@@ -11,6 +11,18 @@
       format("truetype"),
     url("https://db.onlinewebfonts.com/t/319aac7ec4fdab1a7b3f36b93617529f.svg#NuvoWebPro-Black W03 Regular")
       format("svg");
+  font-family: "NuvoWeb W03 Regular";
+  src: url("https://db.onlinewebfonts.com/t/2fef6f975e7606a6e74da721f9976f4b.eot");
+  src: url("https://db.onlinewebfonts.com/t/2fef6f975e7606a6e74da721f9976f4b.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/2fef6f975e7606a6e74da721f9976f4b.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/2fef6f975e7606a6e74da721f9976f4b.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/2fef6f975e7606a6e74da721f9976f4b.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/2fef6f975e7606a6e74da721f9976f4b.svg#NuvoWeb W03 Regular")
+      format("svg");
 }
 
 .navbar {
@@ -20,12 +32,18 @@
   padding: 20px 40px;
   color: black !important;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 100;
 }
 
 .navbar__clone-banner {
   background-color: white;
+  font-family: "NuvoWeb W03 Regular";
   color: red;
   height: auto;
+  font-weight: normal;
   text-align: center;
   font-weight: bold;
   padding: 0; /* Remove padding */

@@ -25,32 +25,71 @@
     url("https://db.onlinewebfonts.com/t/319aac7ec4fdab1a7b3f36b93617529f.svg#NuvoWebPro-Black W03 Regular")
       format("svg");
 }
+/* Intro.css */
 .intro {
-  text-align: center;
-  padding: 20px;
+  background-color: #f7f7f7;
+  padding: 40px 0;
 }
 
 .content-wrapper {
-  display: flex;
-  flex-direction: row; /* Display content side by side */
-  align-items: flex-start; /* Vertically align content to the top */
-  max-width: 60%; /* Limit the width to 60% of the screen */
-  margin: 0 auto; /* Center the component horizontally */
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: auto; /* Add this to contain floated elements */
 }
 
 .image {
-  flex: 1; /* Allow the image to grow and take available space */
-  text-align: left;
+  float: left; /* Float the image to the left */
+  margin-right: 20px; /* Add some space between the image and text */
 }
 
 .image img {
-  max-width: 100%; /* Ensure the image doesn't exceed its container width */
-  float: left; /* Float the image to the left */
-  margin-right: 20px; /* Add some spacing between the image and text */
+  max-width: 350px;
+  height: auto;
 }
 
 .text {
-  font-family: "FS Joey Medium Regular";
-  flex: 2; /* Allow the text to grow and take more space than the image */
-  text-align: left;
+  overflow: hidden; /* Clear the float so that text wraps around the image */
+}
+
+.text h2 {
+  font-size: 24px;
+  color: #333;
+}
+
+.text p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: black;
+}
+
+.text ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.text li {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #666;
+}
+
+/* Media query for responsive design */
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text {
+    margin: 20px 0;
+  }
+
+  .image {
+    float: none; /* Remove float on smaller screens */
+    margin-right: 0;
+  }
+
+  .image img {
+    margin-bottom: 20px;
+  }
 }

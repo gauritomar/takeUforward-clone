@@ -1,0 +1,151 @@
+@font-face {
+  font-family: "FS Joey Medium Regular";
+  src: url("https://db.onlinewebfonts.com/t/68872ce7bf957bd250d67f5be7d58a3d.eot");
+  src: url("https://db.onlinewebfonts.com/t/68872ce7bf957bd250d67f5be7d58a3d.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/68872ce7bf957bd250d67f5be7d58a3d.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/68872ce7bf957bd250d67f5be7d58a3d.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/68872ce7bf957bd250d67f5be7d58a3d.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/68872ce7bf957bd250d67f5be7d58a3d.svg#FS Joey Medium Regular")
+      format("svg");
+
+  font-family: "NuvoWebPro-Xbold W03 Regular";
+  src: url("https://db.onlinewebfonts.com/t/ef30fda71b9c31aeb455e8ab04374236.eot");
+  src: url("https://db.onlinewebfonts.com/t/ef30fda71b9c31aeb455e8ab04374236.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/ef30fda71b9c31aeb455e8ab04374236.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/ef30fda71b9c31aeb455e8ab04374236.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/ef30fda71b9c31aeb455e8ab04374236.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/ef30fda71b9c31aeb455e8ab04374236.svg#NuvoWebPro-Xbold W03 Regular")
+      format("svg");
+
+  font-family: "NuvoMonoWeb W03 Regular";
+  src: url("https://db.onlinewebfonts.com/t/d0c114de8d147deb2bbb740a60963288.eot");
+  src: url("https://db.onlinewebfonts.com/t/d0c114de8d147deb2bbb740a60963288.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/d0c114de8d147deb2bbb740a60963288.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/d0c114de8d147deb2bbb740a60963288.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/d0c114de8d147deb2bbb740a60963288.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/d0c114de8d147deb2bbb740a60963288.svg#NuvoMonoWeb W03 Regular")
+      format("svg");
+}
+.post-header {
+  font-family: Verdana, sans-serif;
+}
+
+.content-column {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.blog-post {
+  margin-bottom: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+h1 {
+  font-size: 32px;
+  font-family: Verdana, sans-serif;
+  font-weight: 600;
+}
+p {
+  font-size: 20px;
+  font-family: Verdana, sans-serif;
+  margin-bottom: 10px;
+}
+
+.note {
+  font-size: 20px;
+  font-family: Verdana, sans-serif;
+  margin-bottom: 10px;
+  background-color: #f0f0f0; /* Grey background color */
+  padding: 10px; /* Add padding to create space around the content */
+  border: 1px solid #ccc; /* Add a border to the box */
+}
+
+.example {
+  margin-top: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  font-family: "Courier New";
+  font-size: 20px;
+}
+.problem-link {
+  cursor: pointer;
+  color: #ffa500;
+  font-family: cursive;
+  font-weight: bold;
+  margin-top: 10px;
+  text-decoration: none;
+  transition: color 0.3s;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.problem-link:hover {
+  color: #800080;
+}
+.disclaimer {
+  color: red;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.approach {
+  font-size: 20px;
+  font-family: Verdana, sans-serif;
+  margin-bottom: 10px;
+}
+
+.approach .description {
+  margin-top: 10px;
+}
+
+.approach .steps {
+  margin-top: 15px;
+}
+
+.approach .pseudo-algorithm {
+  margin-top: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  font-family: "Courier New";
+}
+
+.algorithm {
+  background-color: #f4f4f4;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  white-space: pre-wrap;
+  font-family: Monaco, monospace; /* Use the desired monospaced font */
+  font-size: 16px;
+}
+
+.approach .complexity-analysis {
+  margin-top: 15px;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+strong {
+  font-weight: bold;
+}
